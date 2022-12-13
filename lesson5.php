@@ -32,7 +32,7 @@ Funkcijos kvietimas: stringEnhancer('some text')
 Funkcija grąžina: '**some text**'
 */
 
-function stringEnhancer($text, $text2="**") {
+function stringEnhancer(string $text, string $text2="**":string {
     return $text2.$text.$text2;
 }
 echo (stringEnhancer("some text", "##")).PHP_EOL;
@@ -46,13 +46,13 @@ stringModifier($x, '##');
 echo $x; // '##some text##'
 Funkcija grąžina: funkcija nieko negrąžina
 */
-
-$x = "some text";
-function stringModifier($x1, $exm):void {
-    echo $exm.$x1.$exm;
-}
-stringModifier($x, "##");
-echo $x;
+//
+//$x = "some text";
+//function stringModifier($x1, $exm):void {
+//    echo $exm.$x1.$exm;
+//}
+//stringModifier($x, "##");
+//echo $x;
 
 /*
 5. Parašykite funkciją 'textReplicator', kuri grąžintų 'padaugintą' tekstą.
@@ -65,8 +65,9 @@ Funkcija grąžina: 'some_text'
 */
 
 function textReplicator($text, int $num) {
-    return
+    return $text * $num;
 }
+echo textReplicator("some_text", 3);
 
 /*
 6. Paverskite funkciją 'textReplicator', į veikiančią anoniminę funkciją.
