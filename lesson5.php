@@ -4,10 +4,10 @@
 /*
 1. Parašykite funkciją 'dividesBy5', kuri priimtų int tipo skaičių ir grąžintų jo dalybos iš 5 liekaną.
 */
-function dividesBy5(int $number): int {
-   return $number % 5;
-}
-var_dump(dividesBy5(12));
+//function dividesBy5(int $number): int {
+//   return $number % 5;
+//}
+//var_dump(dividesBy5(12));
 
 /*
 2. Parašykite funkciją 'arrayPrinter', kuri priimtų array tipo parametrą ir
@@ -19,10 +19,10 @@ Funkcija grąžina: funkcija nieko negrąžina - ji tik išspausdina masyvą į 
 ...
 */
 
-function arrayPrinter(array $array):array {
-    echo $array;
-}
-var_dump(arrayPrinter(["some text", "another text"]));
+//function arrayPrinter(array $array):array {
+//    echo $array;
+//}
+//var_dump(arrayPrinter(["some text", "another text"]));
 
 /*
 3. Parašykite funkciją 'stringEnhancer', kuri grąžintų pakeistą tekstą.
@@ -32,7 +32,11 @@ Funkcijos kvietimas: stringEnhancer('some text')
 Funkcija grąžina: '**some text**'
 */
 
-function
+function stringEnhancer($text, $text2="**"):string {
+    return $text2.$text.$text2;
+}
+echo (stringEnhancer("some text", "##")).PHP_EOL;
+echo (stringEnhancer("some text"));
 
 /*
 4. Parašykite funkciją 'stringModifier', kuri pamodifikuotų paduotą string tipo kintamąjį.
@@ -44,7 +48,7 @@ Funkcija grąžina: funkcija nieko negrąžina
 */
 
 /*
-4. Parašykite funkciją 'textReplicator', kuri grąžintų 'padaugintą' tekstą.
+5. Parašykite funkciją 'textReplicator', kuri grąžintų 'padaugintą' tekstą.
 Funkcijos kvietimas:
 textReplicator('some_text', 3);
 Funkcija grąžina: 'some_text-some_text-some_text'
@@ -54,5 +58,5 @@ Funkcija grąžina: 'some_text'
 */
 
 /*
-4. Paverskite funkciją 'textReplicator', į veikiančią anoniminę funkciją.
+6. Paverskite funkciją 'textReplicator', į veikiančią anoniminę funkciją.
 */
