@@ -72,12 +72,18 @@ textReplicator('some_text', null);
 Funkcija grąžina: 'some_text'
 */
 
-//function textReplicator(string $text, int $num) {
-//    for ($i=0; $i < $num; $i++) {
-//        return $text;
-//    }
-//}
-//echo textReplicator("some_text", 3);
+function textReplicator(string $text, ?int $num) {
+    $result = $text;
+
+    if ($num == null) {
+        $num = 1;
+    }
+    for ($i=0; $i < $num; $i++) {
+        return $result = $result."-".$text;
+    }
+}
+var_dump(textReplicator("some_text", 3));
+var_dump(textReplicator("some_text", null));
 
 /*
 6. Paverskite funkciją 'textReplicator', į veikiančią anoniminę funkciją.
