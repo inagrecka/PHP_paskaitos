@@ -32,7 +32,7 @@ Funkcijos kvietimas: stringEnhancer('some text')
 Funkcija grąžina: '**some text**'
 */
 
-function stringEnhancer(string $text, string $text2="**":string {
+function stringEnhancer(string $text, string $text2="**"):string {
     return $text2.$text.$text2;
 }
 echo (stringEnhancer("some text", "##")).PHP_EOL;
