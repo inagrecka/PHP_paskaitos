@@ -55,12 +55,12 @@ Funkcija grąžina: funkcija nieko negrąžina
 //echo $text;
 
 //arba geresnis variantas sitas
-$text = "some text";
-function stringModifier($x, $exm):string {
-    return $exm.$x.$exm;
-}
-$x = stringModifier($text, "##");
-echo $x;
+//$text = "some text";
+//function stringModifier($x, $exm):string {
+//    return $exm.$x.$exm;
+//}
+//$x = stringModifier($text, "##");
+//echo $x;
 
 /*
 5. Parašykite funkciją 'textReplicator', kuri grąžintų 'padaugintą' tekstą.
@@ -82,3 +82,8 @@ Funkcija grąžina: 'some_text'
 /*
 6. Paverskite funkciją 'textReplicator', į veikiančią anoniminę funkciją.
 */
+
+$textReplicator = function(string $text): string {
+    return $text;
+};
+echo $textReplicator("some text");
