@@ -18,11 +18,11 @@ Funkcija grąžina: funkcija nieko negrąžina - ji tik išspausdina masyvą į 
 'another text'
 ...
 */
-$arr = ["some text", "another text"];
-function arrayPrinter(array $array):void {
-    var_dump($array);
-}
-arrayPrinter($arr);
+//$arr = ["some text", "another text"];
+//function arrayPrinter(array $array):void {
+//    var_dump($array);
+//}
+//arrayPrinter($arr);
 
 /*
 3. Parašykite funkciją 'stringEnhancer', kuri grąžintų pakeistą tekstą.
@@ -32,11 +32,11 @@ Funkcijos kvietimas: stringEnhancer('some text')
 Funkcija grąžina: '**some text**'
 */
 
-function stringEnhancer(string $text, string $text2="**"):string {
-    return $text2.$text.$text2;
-}
-echo (stringEnhancer("some text", "##")).PHP_EOL;
-echo (stringEnhancer("some text"));
+//function stringEnhancer(string $text, string $text2="**"):string {
+//    return $text2.$text.$text2;
+//}
+//echo (stringEnhancer("some text", "##")).PHP_EOL;
+//echo (stringEnhancer("some text"));
 
 /*
 4. Parašykite funkciją 'stringModifier', kuri pamodifikuotų paduotą string tipo kintamąjį.
@@ -46,13 +46,13 @@ stringModifier($x, '##');
 echo $x; // '##some text##'
 Funkcija grąžina: funkcija nieko negrąžina
 */
-//
-//$x = "some text";
-//function stringModifier($x1, $exm):void {
-//    echo $exm.$x1.$exm;
-//}
-//stringModifier($x, "##");
-//echo $x;
+
+$text = "some text";
+function stringModifier(&$x, $exm):void { // panaudojam "&" reiskia galim tiesiogiai pamodefikuoti kintamaji
+    $x = $exm.$x.$exm;
+}
+stringModifier($text, "##");
+echo $text;
 
 /*
 5. Parašykite funkciją 'textReplicator', kuri grąžintų 'padaugintą' tekstą.
@@ -64,10 +64,12 @@ textReplicator('some_text', null);
 Funkcija grąžina: 'some_text'
 */
 
-function textReplicator($text, int $num) {
-    return $text * $num;
-}
-echo textReplicator("some_text", 3);
+//function textReplicator(string $text, int $num) {
+//    for ($i=0; $i < $num; $i++) {
+//        return $text;
+//    }
+//}
+//echo textReplicator("some_text", 3);
 
 /*
 6. Paverskite funkciją 'textReplicator', į veikiančią anoniminę funkciją.
