@@ -46,13 +46,21 @@ stringModifier($x, '##');
 echo $x; // '##some text##'
 Funkcija grąžina: funkcija nieko negrąžina
 */
+//
+//$text = "some text";
+//function stringModifier(&$x, $exm):void { // panaudojam "&" reiskia galim tiesiogiai pamodefikuoti kintamaji
+//    $x = $exm.$x.$exm;
+//}
+//stringModifier($text, "##");
+//echo $text;
 
+//arba geresnis variantas sitas
 $text = "some text";
-function stringModifier(&$x, $exm):void { // panaudojam "&" reiskia galim tiesiogiai pamodefikuoti kintamaji
-    $x = $exm.$x.$exm;
+function stringModifier($x, $exm):string {
+    return $exm.$x.$exm;
 }
-stringModifier($text, "##");
-echo $text;
+$x = stringModifier($text, "##");
+echo $x;
 
 /*
 5. Parašykite funkciją 'textReplicator', kuri grąžintų 'padaugintą' tekstą.
