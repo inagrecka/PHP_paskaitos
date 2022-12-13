@@ -18,11 +18,11 @@ Funkcija grąžina: funkcija nieko negrąžina - ji tik išspausdina masyvą į 
 'another text'
 ...
 */
-
-//function arrayPrinter(array $array):array {
-//    echo $array;
-//}
-//var_dump(arrayPrinter(["some text", "another text"]));
+$arr = ["some text", "another text"];
+function arrayPrinter(array $array):void {
+    var_dump($array);
+}
+arrayPrinter($arr);
 
 /*
 3. Parašykite funkciją 'stringEnhancer', kuri grąžintų pakeistą tekstą.
@@ -32,7 +32,7 @@ Funkcijos kvietimas: stringEnhancer('some text')
 Funkcija grąžina: '**some text**'
 */
 
-function stringEnhancer($text, $text2="**"):string {
+function stringEnhancer($text, $text2="**") {
     return $text2.$text.$text2;
 }
 echo (stringEnhancer("some text", "##")).PHP_EOL;
@@ -47,6 +47,13 @@ echo $x; // '##some text##'
 Funkcija grąžina: funkcija nieko negrąžina
 */
 
+$x = "some text";
+function stringModifier($x1, $exm):void {
+    echo $exm.$x1.$exm;
+}
+stringModifier($x, "##");
+echo $x;
+
 /*
 5. Parašykite funkciją 'textReplicator', kuri grąžintų 'padaugintą' tekstą.
 Funkcijos kvietimas:
@@ -56,6 +63,10 @@ Funkcijos kvietimas:
 textReplicator('some_text', null);
 Funkcija grąžina: 'some_text'
 */
+
+function textReplicator($text, int $num) {
+    return
+}
 
 /*
 6. Paverskite funkciją 'textReplicator', į veikiančią anoniminę funkciją.
