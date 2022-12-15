@@ -146,14 +146,14 @@ function exercise8(): array
     */
 
     $numbers = ['ninety' => 90, 'one' => 1, 'two' => 2, 'three' => 3, 'four' => 4, 'five' => 5];
-    foreach ($numbers as $i) {
-        if ($i % 2) {
-            var_dump($i);
+    foreach ($numbers as $key => $i) {
+        if ($i % 2 == 0) {
+            unset($numbers[$key]);
         }
     }
-    return [];
+    return $numbers;
 }
-exercise8();
+var_dump(exercise8());
 
 function exercise9(int $start, int $end): void
 {
@@ -184,7 +184,16 @@ function exercise10(int $number): void
     ...
     60
     */
+
+    for ($i = 1; $i <= $number; $i++) {
+        if ($i % 3 == 0) {
+            echo $i.PHP_EOL;
+        } elseif ($i < 0) {
+            echo "";
+        }
+    }
 }
+exercise10(60);
 
 function exercise11(int $number): void
 {
@@ -200,7 +209,14 @@ function exercise11(int $number): void
     1
     0
     */
+    for ($i = $number; $i > 0; $i--) {
+        echo $i.PHP_EOL;
+        if ($number < 0) {
+            echo "";
+        }
+    }
 }
+exercise11(21);
 
 function getNumbers(): array
 {
@@ -215,14 +231,46 @@ function getNumbers(): array
         -57,
         -36,
     ];
-}
+    }
+//var_dump(getNumbers());
 /*
 Kiekviena užduoties dalis turi būti funkcija. Tęskite funkcijų numeraciją: exercise12, exercise13 ir t.t.
 Masyvą gausite iškvietę funkciją 'getNumbers'
-12. Raskite ir grąžinkite visų masyvo narių sumą
-13. Raskite ir grąžinkite lyginių masyvo narių sumą
-14. Raskite ir grąžinkite teigiamų masyvo narių sumą
-15. Raskite ir grąžinkite sandaugą tų masyvo narių, kurie dalijasi iš 5
-16. Raskite ir grąžinkite masyvo narių vidurkį. Neigiamus skaičius paverskite į teigiamus
-17. Į masyvą pridėkite naują narį - skaičiu 255 - ir išspausdinkite masyva pasinaudodami funkcija 'printr'
-*/
+
+12. Raskite ir grąžinkite visų masyvo narių sumą */
+function exercise12(array $arr): int {
+    $sum = 0;
+    foreach($arr as $num) {
+        $sum += $num;
+    }
+    return $sum;
+}
+var_dump(exercise12(getNumbers()));
+
+//13. Raskite ir grąžinkite lyginių masyvo narių sumą
+function exercise13(array $arr): int {
+    $sum = 0;
+    foreach ($arr as $num) {
+        if ($num % 2 === 0) {
+            $sum += $num;
+        }
+    }
+    return $sum;
+}
+var_dump(exercise13(getNumbers()));
+
+//14. Raskite ir grąžinkite teigiamų masyvo narių sumą
+function exercise14(array $arr): int {
+    $sum = 0;
+    foreach ($arr as $num) {
+        if ($num > 0) {
+            $sum += $num;
+        }
+    }
+    return $sum;
+}
+var_dump(exercise14(getNumbers()));
+
+//15. Raskite ir grąžinkite sandaugą tų masyvo narių, kurie dalijasi iš 5
+//16. Raskite ir grąžinkite masyvo narių vidurkį. Neigiamus skaičius paverskite į teigiamus
+//17. Į masyvą pridėkite naują narį - skaičiu 255 - ir išspausdinkite masyva pasinaudodami funkcija 'printr'
