@@ -2,28 +2,28 @@
 
 declare(strict_types=1);
 
-function exercise1(): array
-{
-    $products = [
-        'item_1' => 'desk',
-        'item_2' => 'lamp',
-        'item_3' => 'error',
-        'item_4' => 'sofa',
-        'item_5' => 'error',
-    ];
-
-    /*
-    Sunaikinkitę visus elementus, kurių reikšmė yra 'error' ir grąžinkite pamodifikuotą masyvą.
-    Tikėkitės, kad $products masyvas gali turėti ne 5, 100 elementų - naudokite ciklą.
-    */
-    foreach ($products as $key => $item) {
-        if ($item === 'error') {
-            unset($products[$key]);
-        }
-    }
-    return $products;
-}
-var_dump(exercise1());
+//function exercise1(): array
+//{
+//    $products = [
+//        'item_1' => 'desk',
+//        'item_2' => 'lamp',
+//        'item_3' => 'error',
+//        'item_4' => 'sofa',
+//        'item_5' => 'error',
+//    ];
+//
+//    /*
+//    Sunaikinkitę visus elementus, kurių reikšmė yra 'error' ir grąžinkite pamodifikuotą masyvą.
+//    Tikėkitės, kad $products masyvas gali turėti ne 5, 100 elementų - naudokite ciklą.
+//    */
+//    foreach ($products as $key => $item) {
+//        if ($item === 'error') {
+//            unset($products[$key]);
+//        }
+//    }
+//    return $products;
+//}
+//var_dump(exercise1());
 
 function exercise2(int $keyPart)
 {
@@ -39,8 +39,17 @@ function exercise2(int $keyPart)
     Funkcijos kvietimas: exercise2(1)
     */
 
-    return [];
+    foreach ($products as $key => $product) {
+        $manoKey = 'product_'.$keyPart;
+        if ($manoKey === $key) {
+            unset($products[$key]);
+            return $products;
+        } else {
+            echo null;
+        }
+    }
 }
+var_dump(exercise2(1));
 
 function exercise3(): array
 {
