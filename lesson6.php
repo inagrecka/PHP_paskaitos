@@ -272,5 +272,28 @@ function exercise14(array $arr): int {
 var_dump(exercise14(getNumbers()));
 
 //15. Raskite ir grąžinkite sandaugą tų masyvo narių, kurie dalijasi iš 5
+function exercise15(array $arr): int {
+    $sandauga = 1;
+    foreach ($arr as $num) {
+        if ($num % 5 === 0) {
+            $sandauga *= $num;
+        }
+    }
+    return $sandauga;
+}
+var_dump(exercise15(getNumbers()));
+
 //16. Raskite ir grąžinkite masyvo narių vidurkį. Neigiamus skaičius paverskite į teigiamus
+function exercise16(array $arr):int {
+    $average = 0;
+    $sum = 0;
+    foreach ($arr as $num) {
+        $num = abs($num);
+        $sum += $num;
+        $average = $sum / count($arr);
+    }
+    return $average;
+}
+var_dump(exercise16(getNumbers()));
+
 //17. Į masyvą pridėkite naują narį - skaičiu 255 - ir išspausdinkite masyva pasinaudodami funkcija 'printr'
