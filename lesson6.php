@@ -297,3 +297,8 @@ function exercise16(array $arr):int {
 var_dump(exercise16(getNumbers()));
 
 //17. Į masyvą pridėkite naują narį - skaičiu 255 - ir išspausdinkite masyva pasinaudodami funkcija 'printr'
+function exercise17(array $arr): array {
+    $arr[] = 255;
+    return $arr;
+}
+print_r(exercise17(getNumbers()));
