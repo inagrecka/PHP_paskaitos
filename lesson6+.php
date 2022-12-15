@@ -39,17 +39,17 @@ function exercise2(int $keyPart)
     Funkcijos kvietimas: exercise2(1)
     */
 
-    foreach ($products as $key => $product) {
-        $manoKey = 'product_'.$keyPart;
-        if ($manoKey === $key) {
-            unset($products[$key]);
-            return $products;
-        } else {
-            echo null;
-        }
-    }
+//    foreach ($products as $key => $product) {
+//        $manoKey = 'product_'.$keyPart;
+//        if ($manoKey === $key) {
+//            unset($products[$key]);
+//            return $products;
+//        } else {
+//            echo null;
+//        }
+//    }
 }
-var_dump(exercise2(1));
+//var_dump(exercise2(1));
 
 function exercise3(): array
 {
@@ -69,8 +69,14 @@ function exercise3(): array
     Tikėkitės, kad $products masyvas gali turėti ne 5, 100 elementų - naudokite ciklą.
     */
 
-    return [];
+    foreach ($transactions as $key => $item) {
+    if ($item['status'] === 'error') {
+        unset($transactions[$key]);
+    }
+    }
+    return $transactions;
 }
+var_dump(exercise3());
 
 function exercise4(string $key): string
 {
