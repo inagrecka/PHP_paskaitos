@@ -114,7 +114,7 @@ function exercise5($cities): array
     return array_filter(
         $cities,
         function (array $city) {
-            if ($city['population'] > 25000000) {
+            if ($city['population'] > 25_000_000) { //ilgus skacius galima rasyti atskiriant su zenklu "_"
                 return true;
             }
         },
@@ -160,6 +160,19 @@ function exercise6(): int
         ],
     ];
 
+    $price = array_reduce(
+        $orderItems,
+        function (int $carry, array $priceT) {
+            if (($priceT['name'] !== 't-shirt') && ($priceT['name'] !== 'shoes')) {
+                $carry += $priceT['priceRegular'] * $priceT['quantity'];
+                return $carry;
+            } else {
+                $carry += $priceT['priceLow'] * $priceT['quantity'];
+                return $carry;
+            }
+        },0
+        );
+    return $price;
 
-    return 0;
 }
+var_dump(exercise6());
