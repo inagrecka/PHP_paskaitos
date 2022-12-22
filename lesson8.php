@@ -12,24 +12,23 @@ $someProducts = [
     ',
 ];
 
-//function exercise5(array $products): int
-function exercise1(array $products)
-{
-    /*
-    Suskaičiuokite ir grąžinkite visų $products masyve esančių eilučių ilgių sumą, BET
-    į sumą neįtraukite tuščių simbolių - ty. tarpų, new line ir pan.
-    Naudokite $someProducts masyvą.
-    */
-    $sum = 0;
-
-    foreach ($products as $product) {
-        $trimProduct = trim($product).PHP_EOL;
-        $stringLength = strlen($trimProduct).PHP_EOL;
-        $sum += $stringLength;
-    }
-    return $sum;
-}
-var_dump(exercise1($someProducts));
+//function exercise1(array $products)
+//{
+//    /*
+//    Suskaičiuokite ir grąžinkite visų $products masyve esančių eilučių ilgių sumą, BET
+//    į sumą neįtraukite tuščių simbolių - ty. tarpų, new line ir pan.
+//    Naudokite $someProducts masyvą.
+//    */
+//    $sum = 0;
+//
+//    foreach ($products as $product) {
+//        $trimProduct = trim($product);
+//        $stringLength = strlen($trimProduct);
+//        $sum += $stringLength;
+//    }
+//    return $sum;
+//}
+//var_dump(exercise1($someProducts));
 
 //function exercise2(): array
 //{
@@ -67,21 +66,28 @@ var_dump(exercise1($someProducts));
 //}
 //var_dump(exercise3());
 
-function exercise4(array $products): int
-{
-    /*
-    Suskaičiuokite ir grąžinkite visų $products masyve esančių eilučių ilgių sumą.
-    Naudokite $someProducts masyvą
-    */
-
-    return 0;
-}
+//function exercise4(array $products): int
+//{
+//    /*
+//    Suskaičiuokite ir grąžinkite visų $products masyve esančių eilučių ilgių sumą.
+//    Naudokite $someProducts masyvą
+//    */
+//    $sum = 0;
+//
+//    foreach ($products as $item) {
+//        $stringLength = strlen($item);
+//        $sum += $stringLength;
+//    }
+//
+//    return $sum;
+//}
+//var_dump(exercise4($someProducts));
 
 function exercise5(): array
 {
     /*
     Kiekvienam žodžiui apskaičiuokite balsių skaičių (a, e, i, o, u)
-    Funkcijos kvietimas: exercise4()
+    Funkcijos kvietimas: exercise5()
     Funkcija grąžina: [2, 3, 3, 1, 2]
     */
 
@@ -92,31 +98,60 @@ function exercise5(): array
         'warm',
         'friends',
     ];
-
-    return [];
+    $vowels = ['a', 'e', 'i', 'o', 'u'];
+    $arr = [];
+    foreach ($words as $word) {
+        $sum = 0;
+        for ($i = 0; $i < strlen($word); $i++) {
+            for ($x = 0; $x < count($vowels); $x++) {
+                if ($word[$i] == $vowels[$x]) {
+                    $sum++;
+                }
+            }
+        }
+        $arr[] = $sum;
+    }
+    return $arr;
 }
+var_dump(exercise5());
 
-function exercise6(array $products): int
-{
-    /*
-    Suskaičiuokite ir grąžinkite visų $products masyve esančių eilučių ilgių sumą, BET
-    į sumą neįtraukite tuščių simbolių - ty. tarpų, new line ir pan.
-    Naudokite $someProducts masyvą.
-    */
+//function exercise6(array $products): int
+//{
+//    /*
+//    Suskaičiuokite ir grąžinkite visų $products masyve esančių eilučių ilgių sumą, BET
+//    į sumą neįtraukite tuščių simbolių - ty. tarpų, new line ir pan.
+//    Naudokite $someProducts masyvą.
+//    */
+//    $sum = 0;
+//
+//    foreach ($products as $product) {
+//        $trimProduct = trim($product);
+//        $stringLength = strlen($trimProduct);
+//        $sum += $stringLength;
+//    }
+//    return $sum;
+//}
+//var_dump(exercise6($someProducts));
 
-    return 0;
-}
-
-function exercise7(): int
-{
-    $text = 'The African philosophy of Ubuntu has its roots in the Nguni word for being human.
-    The concept emphasises the significance of our community and shared humanity and teaches
-    us that "A person is a person through others". Many view the philosphy as a counterweight
-    to the culture of individualism in our contemporary world.';
-
-    /*
-    Suskaičiuokite kiek balsių yra tekste
-    */
-
-    return 0;
-}
+//function exercise7(): int
+//{
+//    $text = 'The African philosophy of Ubuntu has its roots in the Nguni word for being human.
+//    The concept emphasises the significance of our community and shared humanity and teaches
+//    us that "A person is a person through others". Many view the philosphy as a counterweight
+//    to the culture of individualism in our contemporary world.';
+//
+//    /*
+//    Suskaičiuokite kiek balsių yra tekste
+//    */
+//    $sum = 0;
+//    $arr = ['a', 'e', 'i', 'o', 'u'];
+//    for ($i = 0; $i <strlen($text); $i++) {
+//        for ($x = 0; $x < count($arr); $x++) {
+//            if ($text[$i] == $arr[$x]) {
+//                $sum++;
+//            }
+//        }
+//    }
+//    return $sum;
+//}
+//var_dump(exercise7());
