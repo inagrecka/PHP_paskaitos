@@ -38,7 +38,7 @@ function exercise3(array $words): array
     /*
     Išveskite žodžių statistiką.
     Funkcija kviečiama:
-    exercise2(['hello', 'you'])
+    exercise3(['hello', 'you'])
     Funkcijos outputas:
     [
         'hello' => [
@@ -74,6 +74,15 @@ function exercise4(): array
         'notAreal.email.io',
         'real@gmail.com',
     ];
-
-    return [];
+    $letters = ['a', 's', 'b', 'o'];
+    $result = [];
+    foreach ($emails as $mail) {
+        foreach ($letters as $letter) {
+            if (str_starts_with($mail, $letter) || str_ends_with($mail, $letter)) {
+                $result[] = $mail;
+            }
+        }
+    }
+    return $result;
 }
+var_dump(exercise4());
