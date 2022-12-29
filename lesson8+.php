@@ -12,9 +12,14 @@ function exercise1(string $stringToSplit, array $delimiters): array
     Funkcijos outputas turėtų atrodyti taip:
     ['Hello', 'how', 'are', 'you', 'doing?']
     */
-
-    return [];
+    $result = [];
+    foreach ($delimiters as $delimiter) {
+        $newString = explode($delimiter, $stringToSplit);
+        $result[] = $newString;
+    }
+    return $result;
 }
+var_dump(exercise1('Hello_how_are-you doing?', [' ', '-', '_']));
 
 function exercise2(array $words): array
 {
