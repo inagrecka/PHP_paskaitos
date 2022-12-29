@@ -75,25 +75,35 @@ function exercise2(bool $showOnlyDays): void
     Wine glass 51 days ago
     ...
     */
-    $currentDate = new DateTime();
-
-    foreach ($products as $item) {
-        $lastPurchase = date_create_from_format('Y M d H:i:s', $item['last_purchase']);
-        $interval = $currentDate->diff($lastPurchase);
-        if ($showOnlyDays === true) {
-            echo $item['name'].' '.($interval->days).' days ago'.PHP_EOL;
-        } else {
-            echo $item['name'].' '.($interval->y).' years '.($interval->m).' month '.($interval->d).' days ago'.PHP_EOL;
-        }
-    }
+//    $currentDate = new DateTime();
+//
+//    foreach ($products as $item) {
+//        $lastPurchase = date_create_from_format('Y M d H:i:s', $item['last_purchase']);
+//        $interval = $currentDate->diff($lastPurchase);
+//        if ($showOnlyDays === true) {
+//            echo $item['name'].' '.($interval->days).' days ago'.PHP_EOL;
+//        } else {
+//            echo $item['name'].' '.($interval->y).' years '.($interval->m).' month '.($interval->d).' days ago'.PHP_EOL;
+//        }
+//    }
 }
 exercise2(false);
 
-function exercise3(int $numberOfCycles): void
+function exercise3(int $numberOfCycles = 1_000_000): void
 {
     /*
     Išspausdinkite kiek laiko trunka prasukti tuščią ciklą nurodytą kiekį kartų ($numberOfCycles).
     Trukmę apvalinkite iki milisekundžių.
     Pridėkite parametrui $numberOfCycles numatytąją reikšmę 1000000.
     */
+    $i = 0;
+
+    $start = hrtime(true);
+    while($i <= $numberOfCycles) {
+//        echo ($i++).PHP_EOL;
+        $i++;
+    }
+    $end = hrtime(true);
+    echo (($end-$start)/1_000_000);
 }
+exercise3(100_000);
