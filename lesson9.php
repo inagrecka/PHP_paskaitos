@@ -107,15 +107,15 @@ function exercise6(): void
     Wine glass 2021-01-15 18:34:12
     ...
     */
-    foreach ($products as $item) {
-        $name = $item['name'];
-        $lastPurchase = $item['last_purchase'];
-
-        $lastPurchaseFormatted = date_create_from_format('Y M d H:i:s', $lastPurchase);
-
-//        echo $name. ' '. date_format($lastPurchaseFormatted, 'Y-m-d H:i:s').PHP_EOL; - variantas 1
-        echo $name. ' '. $lastPurchaseFormatted->format('Y-m-d H:i:s').PHP_EOL; /* variantas 2 */
-    }
+//    foreach ($products as $item) {
+//        $name = $item['name'];
+//        $lastPurchase = $item['last_purchase'];
+//
+//        $lastPurchaseFormatted = date_create_from_format('Y M d H:i:s', $lastPurchase);
+//
+////        echo $name. ' '. date_format($lastPurchaseFormatted, 'Y-m-d H:i:s').PHP_EOL; - variantas 1
+//        echo $name. ' '. $lastPurchaseFormatted->format('Y-m-d H:i:s').PHP_EOL; /* variantas 2 */
+//    }
 }
 exercise6();
 
@@ -131,8 +131,15 @@ function exercise7($date1, $date2): string
     'Second date is newer'
     */
 
+    if ($date1 > $date2) {
+        echo 'First date is newer';
+    } else {
+        echo 'Second date is newer';
+    }
+
     return '';
 }
+exercise7(date_create('2020-01-25 17:13:25'), date_create('2022-01-25 17:13:25'));
 
 function exercise8($date): void
 {
