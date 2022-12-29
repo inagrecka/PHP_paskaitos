@@ -131,17 +131,17 @@ function exercise7($date1, $date2): string
     'Second date is newer'
     */
 
-    if ($date1 > $date2) {
-        echo 'First date is newer';
-    } else {
-        echo 'Second date is newer';
-    }
-
+//    if ($date1 > $date2) {
+//        echo 'First date is newer';
+//    } else {
+//        echo 'Second date is newer';
+//    }
+//
     return '';
 }
 exercise7(date_create('2020-01-25 17:13:25'), date_create('2022-01-25 17:13:25'));
 
-function exercise8($date): void
+function exercise8(DateTime $date): void /* butinai irasyti klase "DateTime" jeigu dirbame su DIFF!!! */
 {
     /*
     Išspausdinkite paduotos datos skirtumą nuo dabartinio momento žodžiais.
@@ -152,7 +152,16 @@ function exercise8($date): void
     Rezultatas:
     Supplied date is in the future
     */
+    $currentDate = new DateTime(); /* esama data šiam momentui */
+
+    if ($date < $currentDate) {
+        $interval = $date->diff($currentDate);
+        echo 'Supplied date was '. ($interval->days). ' days ago';
+    } else {
+        echo 'Supplied date is in the future';
+    }
 }
+exercise8(date_create('2023-01-25 17:13:25'));
 
 function exercise9($date): void
 {
