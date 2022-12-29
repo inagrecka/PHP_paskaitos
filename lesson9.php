@@ -48,8 +48,16 @@ exercise3();
 */
 function exercise4(): void
 {
+$date = new DateTime('2000-03-02 15:30:00');
+var_dump($date);
 
+$date = new DateTime('2000/02/15 20:30:00');
+var_dump($date ->format('Y/m/d h:i:s A'));
+
+$date = new DateTime('2000-03-02 15:30:00');
+var_dump($date ->format('Y M jS H:i:s'));
 }
+exercise4();
 
 /*
 5. Sukurkite datą iš '15th Jan 2021 8:15:01 PM' (data X). Pamodifikuokite, kad gautumėte:
