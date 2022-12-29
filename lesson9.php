@@ -152,18 +152,18 @@ function exercise8(DateTime $date): void /* butinai irasyti klase "DateTime" jei
     Rezultatas:
     Supplied date is in the future
     */
-    $currentDate = new DateTime(); /* esama data šiam momentui */
-
-    if ($date < $currentDate) {
-        $interval = $date->diff($currentDate);
-        echo 'Supplied date was '. ($interval->days). ' days ago';
-    } else {
-        echo 'Supplied date is in the future';
-    }
+//    $currentDate = new DateTime(); /* esama data šiam momentui */
+//
+//    if ($date < $currentDate) {
+//        $interval = $date->diff($currentDate);
+//        echo 'Supplied date was '. ($interval->days). ' days ago';
+//    } else {
+//        echo 'Supplied date is in the future';
+//    }
 }
 exercise8(date_create('2023-01-25 17:13:25'));
 
-function exercise9($date): void
+function exercise9(DateTime $date): void
 {
     /*
     Išspausdinkite datų skirtumą žodžiais.
@@ -174,4 +174,12 @@ function exercise9($date): void
     Rezultatas:
     Supplied date is in the future
     */
+    $currentTime = new DateTime();
+    if ($date < $currentTime) {
+        $interval = $date->diff($currentTime);
+        echo 'Supplied date was '. ($interval->y). ' years '. ($interval->m). ' months '. ($interval->days). ' days';
+    } else {
+        echo 'Supplied date is in the future';
+    }
 }
+exercise9(date_create('2023-01-25 17:13:25'));
