@@ -2,44 +2,44 @@
 
 declare(strict_types=1);
 
-function exercise1(int $year): array
-{
-    $products = [
-        [
-            'name' => 'Wine glass',
-            'last_purchase' => '2022 Jan 15 18:34:12',
-        ],
-        [
-            'name' => 'Bread knife',
-            'last_purchase' => '2020 Mar 15 23:14:00',
-        ],
-        [
-            'name' => 'Blue chair',
-            'last_purchase' => '2019 Dec 12 15:00:12',
-        ],
-        [
-            'name' => 'Cutting board',
-            'last_purchase' => '2022 Feb 1 03:15:01',
-        ],
-    ];
-
-    /*
-    Grąžinkite iš funkcijos masyvą tik su tais produktais, kurie paskutinį kartą buvo pirkti einamaisiais metais.
-    Ši funkcija turėtų veikti ir bet kuriais ateinančiais metais (2023, 2024 ir t.t.)
-    */
-    $yearStart = new DateTime($year. '-01-01');
-    $yearEnd = new DateTime(($year+1). '-01-01');
-    $purchasedProducts = [];
-
-    foreach ($products as $item) {
-        $lastPurchase = date_create_from_format('Y M d H:i:s', $item['last_purchase']);
-        if (($yearStart <= $lastPurchase) && ($lastPurchase < $yearEnd)) {
-            $purchasedProducts[] = $item;
-        }
-    }
-    return $purchasedProducts;
-}
-var_dump(exercise1(2022));
+//function exercise1(int $year): array
+//{
+//    $products = [
+//        [
+//            'name' => 'Wine glass',
+//            'last_purchase' => '2022 Jan 15 18:34:12',
+//        ],
+//        [
+//            'name' => 'Bread knife',
+//            'last_purchase' => '2020 Mar 15 23:14:00',
+//        ],
+//        [
+//            'name' => 'Blue chair',
+//            'last_purchase' => '2019 Dec 12 15:00:12',
+//        ],
+//        [
+//            'name' => 'Cutting board',
+//            'last_purchase' => '2022 Feb 1 03:15:01',
+//        ],
+//    ];
+//
+//    /*
+//    Grąžinkite iš funkcijos masyvą tik su tais produktais, kurie paskutinį kartą buvo pirkti einamaisiais metais.
+//    Ši funkcija turėtų veikti ir bet kuriais ateinančiais metais (2023, 2024 ir t.t.)
+//    */
+//    $yearStart = new DateTime($year. '-01-01');
+//    $yearEnd = new DateTime(($year+1). '-01-01');
+//    $purchasedProducts = [];
+//
+//    foreach ($products as $item) {
+//        $lastPurchase = date_create_from_format('Y M d H:i:s', $item['last_purchase']);
+//        if (($yearStart <= $lastPurchase) && ($lastPurchase < $yearEnd)) {
+//            $purchasedProducts[] = $item;
+//        }
+//    }
+//    return $purchasedProducts;
+//}
+//var_dump(exercise1(2022));
 
 function exercise2(bool $showOnlyDays): void
 {
@@ -75,7 +75,19 @@ function exercise2(bool $showOnlyDays): void
     Wine glass 51 days ago
     ...
     */
+    $currentDate = new DateTime();
+
+    foreach ($products as $item) {
+        $lastPurchase = date_create_from_format('Y M d H:i:s', $item['last_purchase']);
+        $interval = $currentDate->diff($lastPurchase);
+        if ($showOnlyDays === true) {
+            echo $item['name'].' '.($interval->days).' days ago'.PHP_EOL;
+        } else {
+            echo $item['name'].' '.($interval->y).' years '.($interval->m).' month '.($interval->d).' days ago'.PHP_EOL;
+        }
+    }
 }
+exercise2(false);
 
 function exercise3(int $numberOfCycles): void
 {
