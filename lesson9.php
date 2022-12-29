@@ -5,20 +5,20 @@ declare(strict_types=1);
 /*
 1. Išspausdinkite šio momento datą pasinaudodami funkcija 'date'
 */
-function exercise1(): void
-{
-var_dump(date('Y-m-d H:i:s'));
-}
-exercise1();
+//function exercise1(): void
+//{
+//var_dump(date('Y-m-d H:i:s'));
+//}
+//exercise1();
 
 /*
 2. Išspausdinkite datą '2008-12-15 15:15' pasinaudodami funkcija 'date'
 */
-function exercise2(): void
-{
-var_dump(date('Y-m-d H:i:s', 1229346900));
-}
-exercise2();
+//function exercise2(): void
+//{
+//var_dump(date('Y-m-d H:i:s', 1229346900));
+//}
+//exercise2();
 
 /*
 3. Išspausdinkite šio momento datą skirtingais formatais, kurie atitiktų pavyzdžius:
@@ -29,16 +29,16 @@ exercise2();
 - savaites numeris (52 savaitės metuose)
 - dienos numeris (365 dienos metuose)
 */
-function exercise3(): void
-{
-var_dump(date('Y M j H:i:s', 5148900));
-var_dump(date('Y M d H:i', 5148900));
-var_dump(date('Y M jS h:i:s A', 5177700));
-var_dump(date('Y/n/j', 5148900));
-var_dump(date('W'));
-var_dump(date('z'));
-}
-exercise3();
+//function exercise3(): void
+//{
+//var_dump(date('Y M j H:i:s', 5148900));
+//var_dump(date('Y M d H:i', 5148900));
+//var_dump(date('Y M jS h:i:s A', 5177700));
+//var_dump(date('Y/n/j', 5148900));
+//var_dump(date('W'));
+//var_dump(date('z'));
+//}
+//exercise3();
 
 /*
 4. Sukurkite datos objektą iš šių tekstinių datų:
@@ -46,18 +46,18 @@ exercise3();
 - 2000/02/15 08:30:00 PM
 - 2000 March 2nd 15:30:00
 */
-function exercise4(): void
-{
-$date = new DateTime('2000-03-02 15:30:00');
-var_dump($date);
-
-$date = new DateTime('2000/02/15 20:30:00');
-var_dump($date ->format('Y/m/d h:i:s A'));
-
-$date = new DateTime('2000-03-02 15:30:00');
-var_dump($date ->format('Y M jS H:i:s'));
-}
-exercise4();
+//function exercise4(): void
+//{
+//$date = new DateTime('2000-03-02 15:30:00');
+//var_dump($date);
+//
+//$date = new DateTime('2000/02/15 8:30:00 PM');
+//var_dump($date ->format('Y/m/d h:i:s A'));
+//
+//$date = new DateTime('2000-03-02 15:30:00');
+//var_dump($date ->format('Y M jS H:i:s'));
+//}
+//exercise4();
 
 /*
 5. Sukurkite datą iš '15th Jan 2021 8:15:01 PM' (data X). Pamodifikuokite, kad gautumėte:
@@ -72,8 +72,18 @@ exercise4();
 
 function exercise5(): void
 {
+$date = new DateTime('2021-01-15 8:15:01 PM');
+//$date->format('jS M Y h:i:s A');
+//var_dump($date->modify('-2weeks'));
+//var_dump($date->modify('+10years'));
+//var_dump($date->modify('-5hours'));
+//var_dump($date->modify('last day of this month'));
+//var_dump($date->modify('first day of this month'));
+//var_dump($date->modify('Tuesday next week'));
+var_dump($date->modify('-1day, -8hours, -15minutes'));
 
 }
+exercise5();
 
 function exercise6(): void
 {
