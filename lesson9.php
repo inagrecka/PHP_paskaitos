@@ -80,7 +80,7 @@ $date = new DateTime('2021-01-15 8:15:01 PM');
 //var_dump($date->modify('last day of this month'));
 //var_dump($date->modify('first day of this month'));
 //var_dump($date->modify('Tuesday next week'));
-var_dump($date->modify('-1day, -8hours, -15minutes'));
+//var_dump($date->modify('-1day, -8hours, -15minutes'));
 
 }
 exercise5();
@@ -107,7 +107,17 @@ function exercise6(): void
     Wine glass 2021-01-15 18:34:12
     ...
     */
+    foreach ($products as $item) {
+        $name = $item['name'];
+        $lastPurchase = $item['last_purchase'];
+
+        $lastPurchaseFormatted = date_create_from_format('Y M d H:i:s', $lastPurchase);
+
+//        echo $name. ' '. date_format($lastPurchaseFormatted, 'Y-m-d H:i:s').PHP_EOL; - variantas 1
+        echo $name. ' '. $lastPurchaseFormatted->format('Y-m-d H:i:s').PHP_EOL; /* variantas 2 */
+    }
 }
+exercise6();
 
 function exercise7($date1, $date2): string
 {
