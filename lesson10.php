@@ -63,23 +63,23 @@ declare(strict_types=1);
 //}
 //exercise2();
 
-function exercise3(): array
-{
-    /*
-    Perskaitykite visus tr. priemonių pavadinimus iš failo vehicles.txt,
-    sudėkite juos į masyva ir grąžinkite iš funkcijos.
-    [
-        'Honda Civic',
-        'Boeing 737',
-        ...
-    ]
-    */
-    $fileName = 'vehicles.txt';
-    $string = file_get_contents($fileName);
-    var_dump(explode(PHP_EOL, $string));
-    return [];
-}
-exercise3();
+//function exercise3(): array
+//{
+//    /*
+//    Perskaitykite visus tr. priemonių pavadinimus iš failo vehicles.txt,
+//    sudėkite juos į masyva ir grąžinkite iš funkcijos.
+//    [
+//        'Honda Civic',
+//        'Boeing 737',
+//        ...
+//    ]
+//    */
+//    $fileName = 'vehicles.txt';
+//    $string = file_get_contents($fileName);
+//    var_dump(explode(PHP_EOL, $string));
+//    return [];
+//}
+//exercise3();
 
 /*
     Užduotis: 4
@@ -95,54 +95,61 @@ exercise3();
     Event 'birthday' is 97 days away
 */
 
-function exercise5(): void
-{
-    /*
-    Įrašykite visą $vehicles masyvą į failą vehicles_database.json JSON formatu.
-    */
 
-    $vehicles = [
-        [
-            'type' => 'passenger car',
-            'name' => 'Honda Civic',
-            'weight' => 1550
-        ],
-        [
-            'type' => 'airplane',
-            'name' => 'Boeing 737',
-            'weight' => 41410
-        ],
-        [
-            'type' => 'airplane',
-            'name' => 'Cessna DC-6',
-            'weight' => 1300
-        ],
-        [
-            'type' => 'truck',
-            'name' => 'Volvo FH16',
-            'weight' => 12500
-        ],
-        [
-            'type' => 'truck',
-            'name' => 'MB Actros',
-            'weight' => 13000
-        ],
-        [
-            'type' => 'passenger car',
-            'name' => 'VW Golf',
-            'weight' => 1450
-        ],
-    ];
-}
+//function exercise5(): void
+//{
+//    /*
+//    Įrašykite visą $vehicles masyvą į failą vehicles_database.json JSON formatu.
+//    */
+//
+//    $vehicles = [
+//        [
+//            'type' => 'passenger car',
+//            'name' => 'Honda Civic',
+//            'weight' => 1550
+//        ],
+//        [
+//            'type' => 'airplane',
+//            'name' => 'Boeing 737',
+//            'weight' => 41410
+//        ],
+//        [
+//            'type' => 'airplane',
+//            'name' => 'Cessna DC-6',
+//            'weight' => 1300
+//        ],
+//        [
+//            'type' => 'truck',
+//            'name' => 'Volvo FH16',
+//            'weight' => 12500
+//        ],
+//        [
+//            'type' => 'truck',
+//            'name' => 'MB Actros',
+//            'weight' => 13000
+//        ],
+//        [
+//            'type' => 'passenger car',
+//            'name' => 'VW Golf',
+//            'weight' => 1450
+//        ],
+//    ];
+//    $jsonFile = json_encode($vehicles, JSON_PRETTY_PRINT);
+//    file_put_contents('vehicles_database.json', $jsonFile);
+//}
+//exercise5();
 
 function exercise6(): array
 {
     /*
     Perskaitykite failo vehicles_database.json turinį, paverskite jį į masyvą ir grąžinkite iš funkcijos.
     */
+    $data = file_get_contents('vehicles_database.json');
+    $deserializedData = json_decode($data, true);
 
-    return [];
+    return $deserializedData;
 }
+var_dump(exercise6());
 
 function exercise7(): array
 {
