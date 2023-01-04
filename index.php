@@ -15,5 +15,12 @@
         echo $i.'<br>';
     endif;
 endfor; ?> <!-- ir gale php uzdaryti su ?> -->
+
+<form method="POST" action="submit.php">
+    <input type="text" name="name"/>
+    <input type="text" name="surname"/>
+    <input type="submit">
+</form>
 </body>
 </html>
+
