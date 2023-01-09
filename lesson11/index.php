@@ -29,15 +29,16 @@ $todoList = json_decode($fileItems, true);
 
 <h1> ToDo list: </h1>
 <ul>
-    <?php
-    foreach ($todoList as $item) {
-        echo '<li>' . $item['task'] . '</li>';
-    }
-    ?>
+    <?php foreach ($todoList as $todoItem) : ?>
+        <li><?= $todoItem['task'] ?></li> <!-- '=' sutrumpinimas ECHO -->
+    <?php endforeach ?>
+
 <!--    APAČIOJE KITAS VARIANTAS (geresnis) -->
-<!--    --><?php //foreach ($todoList as $todoItem) : ?>
-<!--        <li>--><?php //= $todoItem['todo'] ?><!--</li> '=' sutrumpinimas ECHO-->
-<!--    --><?php //endforeach ?>
+    <!--    --><?php
+    //    foreach ($todoList as $item) {
+    //        echo '<li>' . $item['task'] . '</li>';
+    //    }
+    //    ?>
 </ul>
 </body>
 </html>

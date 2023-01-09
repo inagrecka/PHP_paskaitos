@@ -1,11 +1,14 @@
 [
     {
-        "new item": "valgyti"
+        "task": "valgyti"
     },
     {
-        "new item": "miegoti"
+        "task": "miegoti"
     },
     {
-        "new item": "valgyti"
+        "task": "virti sriuba"
+    },
+    {
+        "task": "virti sriuba"
     }
 ]

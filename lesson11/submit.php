@@ -1,5 +1,4 @@
 <?php
-//require 'index.php';
 $oldTodo = file_get_contents('new.json');
 //var_dump($oldTodo);
 $deserializedOldTodo = json_decode($oldTodo, true);
@@ -9,7 +8,7 @@ $deserializedOldTodo[] = [
         'task' => $_POST['todo'] //
 ];
 var_dump($_POST['todo']);
-//string(7) "valgyti"
+
 /*jeigu input'ui priskirsim kintamaji, tada i masyva idesime kintamaji (be POST)
  $new = $_POST['todo'];
  $deserializedOldTodo[] = $new; */
