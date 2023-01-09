@@ -1,3 +1,15 @@
+<!--
+DARBO EIGA:
+1. nuskaitome JSON failą;
+2. konvertuojam į MASYVĄ;
+3. paleidžiam FOREACH ciklą
+-->
+
+<?php
+$fileItems = file_get_contents('new.json');
+$todoList = json_decode($fileItems, true);
+?>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -15,23 +27,17 @@
     <input type="submit">
 </form>
 
-<!--
-DARBO EIGA:
-1. nuskaitome JSON failą;
-2. konvertuojam į MASYVĄ;
-3. paleidžiam FOREACH ciklą
--->
-
-<?php
-$fileItems = file_get_contents('new.json');
-$todoList = json_decode($fileItems, true);
-?>
-
 <h1> ToDo list: </h1>
 <ul>
-    <?php foreach ($todoList as $item): ?>
-    <li> <?= $item['todo'] ?> </li>
-    <?php endforeach ?>
+    <?php
+    foreach ($todoList as $item) {
+        echo '<li>' . $item['task'] . '</li>';
+    }
+    ?>
+<!--    APAČIOJE KITAS VARIANTAS (geresnis) -->
+<!--    --><?php //foreach ($todoList as $todoItem) : ?>
+<!--        <li>--><?php //= $todoItem['todo'] ?><!--</li> '=' sutrumpinimas ECHO-->
+<!--    --><?php //endforeach ?>
 </ul>
 </body>
 </html>

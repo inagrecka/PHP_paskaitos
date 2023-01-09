@@ -1,5 +1,11 @@
 [
-    "valgyti",
-    "valgyti",
-    "miegoti"
+    {
+        "new item": "valgyti"
+    },
+    {
+        "new item": "miegoti"
+    },
+    {
+        "new item": "valgyti"
+    }
 ]
