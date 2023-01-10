@@ -1,18 +1,12 @@
 <?php
 
-echo 'DELETED';
-
 $fileItems = file_get_contents('new.json');
 $todoList = json_decode($fileItems, true);
 
-unset($todoList[$_POST['id']]);
-var_dump($_POST['id']);
-
-$updatedList = json_encode($todoList, JSON_PRETTY_PRINT);
-file_put_contents('new.json', $updatedList);
+$id = $_POST['edit'];
 ?>
 
-<!doctype html>
+<<!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -22,7 +16,13 @@ file_put_contents('new.json', $updatedList);
     <title>Document</title>
 </head>
 <body>
-<br>
-<a href="index.php">BACK</a>
+<form method="GET" action="submit.php">
+    <label>Update TODO job</label>
+    <br>
+    <input type="text" id="todoInput" name="todo" placeholder=<?= $_POST['todo'] ?>>
+    <?= $_POST['new_date'] ?>
+    <?= $_POST['new_time'] ?>
+    <input type="submit">
+</form>
 </body>
 </html>

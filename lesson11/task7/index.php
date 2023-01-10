@@ -48,6 +48,12 @@ $todoList = json_decode($fileItems, true);
                     <input type="submit" value="DELETE">
                 </form>
             </td>
+            <td>
+                <form method="POST" action="edit.php">
+                    <input type="hidden" name="edit" value="<?= $key ?>">
+                    <input type="submit" value="EDIT">
+                </form>
+            </td>
         </tr>
     </table>
 <?php endforeach ?>
