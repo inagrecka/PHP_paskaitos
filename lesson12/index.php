@@ -6,19 +6,25 @@ declare(strict_types=1);
 1. Parašykite funkciją, kuri pašalintų paskutinį žodį iš stringo
 "A car is standing in a parkinglot." --> "A car is standing in a"
 */
-function task1(string $input):void {
-    $pattern = '/\s(parkinglot)./';
+function task1(string $input):string {
+    $pattern = '/\s\w+\./'; //tarpas + bet koks zodis + taskas
     $change = '';
     $newText = preg_replace($pattern, $change, $input);
-    echo $newText;
+    return $newText;
 }
-task1('A car is standing in a parkinglot.');
+var_dump(task1('A car is standing in a parkinglot.'));
 /*
 2. Parašykite funkciją, kuri patikrintų, ar tekstas atitinka lietuviško mobilaus telefono numerio formatą
 "+37062345678" - true
 "+37012345678" - false
 "+3706234567" - false
 "+3706234567a" - false
+*/
+//function task2(bool: $number) {
+//    $pattern = '/(+3706)/';
+//}
+//task2();
+/*
 3. Patobulinkite funkciją (2). Funkcija turėtų galėti patikrinti ir tokius telefono numerius:
 "+370 623 45678"
 "+370-623-45678"
