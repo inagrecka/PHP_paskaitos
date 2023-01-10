@@ -1,10 +1,3 @@
-<!--
-DARBO EIGA:
-1. nuskaitome JSON failą;
-2. konvertuojam į MASYVĄ;
-3. paleidžiam FOREACH ciklą
--->
-
 <?php
 $fileItems = file_get_contents('new.json');
 $todoList = json_decode($fileItems, true);
@@ -38,7 +31,7 @@ $todoList = json_decode($fileItems, true);
 </form>
 
 <h1> ToDo list: </h1>
-<?php foreach ($todoList as $todoItem) : ?>
+<?php foreach ($todoList as $key=>$todoItem) : ?>
     <table>
         <tr>
             <th>Job</th>
@@ -49,6 +42,12 @@ $todoList = json_decode($fileItems, true);
             <td><?= $todoItem['task'] ?></td>
             <td><?= $todoItem['created_at'] ?></td>
             <td><?= $todoItem['due_date'] ?></td>
+            <td>
+                <form method="POST" action="delete.php">
+                    <input type="hidden" name="id" value="<?= $key ?>">
+                    <input type="submit" value="DELETE">
+                </form>
+            </td>
         </tr>
     </table>
 <?php endforeach ?>

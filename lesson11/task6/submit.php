@@ -1,8 +1,6 @@
 <?php
 $oldTodo = file_get_contents('new.json');
-//var_dump($oldTodo);
 $deserializedOldTodo = json_decode($oldTodo, true);
-//var_dump($deserializedOldTodo);
 $date = date('Y-m-d H:i:s');
 $newDate = new DateTime($_POST['new_date']);
 $dueDate = $newDate -> format('Y-m-d');
@@ -14,13 +12,10 @@ $deserializedOldTodo[] = [
         'created_at' => $date,
         'due_date' => $dueDate.' '.$dueTime,
 ];
-var_dump($dueDate);
-/*jeigu input'ui priskirsim kintamaji, tada i masyva idesime kintamaji (be POST)
- $new = $_POST['todo'];
- $deserializedOldTodo[] = $new; */
 
 $serializedOldTodo = json_encode($deserializedOldTodo, JSON_PRETTY_PRINT);
 $newTodo = file_put_contents('new.json', $serializedOldTodo);
+
 ?>
 
 <!doctype html>
