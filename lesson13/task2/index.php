@@ -1,6 +1,10 @@
 <?php
-//phpinfo();
+
 declare(strict_types=1);
+
+$fileItems = file_get_contents('new.json');
+$fileList = json_decode($fileItems, true);
+
 ?>
 
 <!--2. Pridėti puslapį, kuriame būtų atvaizduojami visi pauplodinti failai. Turėtų būti matoma:-->
@@ -22,6 +26,11 @@ declare(strict_types=1);
     <form action="submit.php" method="POST" enctype="multipart/form-data">
         <input type="file" name="my_file">
         <button type="submit">Upload</button>
+    </form>
+    <br>
+    <form action="list.php" method="POST">
+        <input type="hidden" name="my_list">
+        <button type="submit">List of uploaded files</button>
     </form>
 </body>
 </html>
