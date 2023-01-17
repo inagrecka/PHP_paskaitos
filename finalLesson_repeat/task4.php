@@ -23,13 +23,12 @@ Funkcijos outputas:
 */
 
 function task4(array $arr) {
-    $vowels = 0;
-    $consonants = 0;
-    $length = 0;
-    $startsWith = '';
-    $endsWith = '';
     foreach ($arr as $item) {
+        $vowels = preg_match_all('/[aeiou]/',$item);
+        $consonants =
         $length = strlen($item);
+        $startsWith = substr($item, 0, 1);
+        $endsWith = substr($item, -1, 1);
 
         $arr[] = [
             'vowels' => $vowels,
@@ -38,14 +37,8 @@ function task4(array $arr) {
             'starts_with' => $startsWith,
             'ends_with' => $endsWith,
         ];
-//        for ($i = 0; $i < strlen($item); $i++) {
-//            if ($item[$i] == 'a' || $item[$i] == 'e' || $item[$i] == 'i' || $item[$i] == 'o' || $item[$i] == 'u') {
-//                echo $vowels;
-//            }
-//        }
     }
     return $arr;
-
 }
 var_dump(task4(['hello', 'you']));
 
