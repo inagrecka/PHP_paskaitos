@@ -23,6 +23,7 @@ Funkcijos outputas:
 */
 
 function task4(array $arr):array {
+    $newArr = [];
     foreach ($arr as $item) {
         $vowels = preg_match_all('/[aeiou]/',$item);
         $consonants = preg_match_all('/[bcdfghjklmnpqrstvwxyz]/', $item);
@@ -30,7 +31,7 @@ function task4(array $arr):array {
         $startsWith = substr($item, 0, 1);
         $endsWith = substr($item, -1, 1);
 
-        $arr[$item] = [
+        $newArr[$item] = [
             'vowels' => $vowels,
             'consonants' => $consonants,
             'length' => $length,
@@ -38,7 +39,7 @@ function task4(array $arr):array {
             'ends_with' => $endsWith,
         ];
     }
-    return $arr;
+    return $newArr;
 }
 var_dump(task4(['hello', 'you']));
 
