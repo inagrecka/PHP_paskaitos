@@ -22,15 +22,15 @@ Funkcijos outputas:
 ]
 */
 
-function task4(array $arr) {
+function task4(array $arr):array {
     foreach ($arr as $item) {
         $vowels = preg_match_all('/[aeiou]/',$item);
-        $consonants =
+        $consonants = preg_match_all('/[bcdfghjklmnpqrstvwxyz]/', $item);
         $length = strlen($item);
         $startsWith = substr($item, 0, 1);
         $endsWith = substr($item, -1, 1);
 
-        $arr[] = [
+        $arr[$item] = [
             'vowels' => $vowels,
             'consonants' => $consonants,
             'length' => $length,
